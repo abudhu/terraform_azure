@@ -14,7 +14,6 @@ resource "azurerm_virtual_network" "main" {
   address_space       = ["10.0.0.0/16"]
   location            = "${azurerm_resource_group.main.location}"
   resource_group_name = "${azurerm_resource_group.main.name}"
-
 }
 
 resource "azurerm_network_security_group" "main" {
@@ -34,7 +33,6 @@ resource "azurerm_network_security_group" "main" {
     priority                   = "100"
     direction                  = "Inbound"
   }
-
 }
 
 resource "azurerm_subnet" "publicSubnet" {
@@ -113,7 +111,7 @@ resource "azurerm_virtual_machine" "main" {
   os_profile {
     computer_name  = "nginxWebOne"
     admin_username = "sshuser"
-    admin_password = "espz@}5;#F(8fZPLF3"
+    admin_password = "YOUR_PASSWORD_HERE"
   }
 
   os_profile_linux_config {
